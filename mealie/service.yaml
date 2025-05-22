@@ -1,0 +1,44 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"mealie"},"name":"mealie","namespace":"mealie","resourceVersion":"210857"},"spec":{"ports":[{"port":9000,"protocol":"TCP","targetPort":9000}],"selector":{"app":"mealie"},"type":"LoadBalancer"}}
+    creationTimestamp: "2025-05-21T19:48:03Z"
+    finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+    labels:
+      app: mealie
+    name: mealie
+    namespace: mealie
+    resourceVersion: "211540"
+    uid: f99ed7d7-9d32-4ea1-acab-3eae64119fa6
+  spec:
+    allocateLoadBalancerNodePorts: true
+    clusterIP: 10.43.47.85
+    clusterIPs:
+    - 10.43.47.85
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 30850
+      port: 9000
+      protocol: TCP
+      targetPort: 9000
+    selector:
+      app: mealie
+    sessionAffinity: None
+    type: LoadBalancer
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 192.168.0.6
+        ipMode: VIP
+kind: List
+metadata:
+  resourceVersion: ""
