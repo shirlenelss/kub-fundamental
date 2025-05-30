@@ -1,0 +1,6 @@
+## disable nodeExporter
+nodeExporter:
+  enabled: false
+## override grafanaboard dashboard password
+grafana:
+  adminPassword: mylovely123
