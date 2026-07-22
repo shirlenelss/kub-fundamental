@@ -1,0 +1,11 @@
+# Overrides applied on top of homarr-labs/homarr defaults.
+# Install/upgrade with:
+#   helm upgrade --install homarr homarr-labs/homarr -n homarr -f values.yaml
+#
+# Requires a pre-created secret in the homarr namespace before install:
+#   kubectl create secret generic db-encryption -n homarr \
+#     --from-literal=db-encryption-key=$(openssl rand -hex 32)
+
+persistence:
+  homarrDatabase:
+    enabled: true
